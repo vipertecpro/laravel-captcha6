@@ -47,9 +47,9 @@ abstract class AbstractGenerator
 
         imageline(
             $img,
-            random_int(0, floor($imageWidth / 2)),
+            random_int(0, (int)floor($imageWidth / 2)),
             random_int(1, $imageHeight),
-            random_int(floor($imageWidth / 2), $imageWidth),
+            random_int((int)floor($imageWidth / 2), $imageWidth),
             random_int(1, $imageHeight),
             imagecolorallocate($img, $rgb['r'], $rgb['g'], $rgb['b'])
         );

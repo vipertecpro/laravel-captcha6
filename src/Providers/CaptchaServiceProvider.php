@@ -84,8 +84,8 @@ class CaptchaServiceProvider extends ServiceProvider
      */
     protected function registerValidator(): void
     {
-        Validator::extend(config('bone.captcha.validator'), function ($attribute, $value, $parameters, $validator) {
+        Validator::extend(config('bone.captcha.validator'), function ($attribute, $value) {
             return $this->app[Captcha::class]->validate($value);
-        }, trans('bone::captcha.incorrect_code'));
+        },  /** @scrutinizer ignore-type */  trans('bone::captcha.incorrect_code'));
     }
 }

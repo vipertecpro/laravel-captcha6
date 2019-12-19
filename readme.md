@@ -1,4 +1,4 @@
-# Captcha integration for the Laravel 5
+# Captcha integration for the Laravel 6.X
 Package information:
 
 [![Latest Stable Version](https://poser.pugx.org/vipertecpro/laravel-captcha6/v/stable)](https://packagist.org/packages/vipertecpro/laravel-captcha6)
