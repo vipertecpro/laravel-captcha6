@@ -74,22 +74,22 @@ class GeneratorWaves extends AbstractGenerator implements GeneratorInterface
                     $g = $gX = $gY = $gXY = $bgColor['g'];
                     $b = $bX = $bY = $bXY = $bgColor['b'];
                 } else {
-                    $rgb = imagecolorat(/** @scrutinizer ignore-type */$img1, $sx, $sy);
+                    $rgb = (int)imagecolorat(/** @scrutinizer ignore-type */$img1, $sx, $sy);
                     $r   = ($rgb >> 16) & 0xFF;
                     $g   = ($rgb >> 8) & 0xFF;
                     $b   = $rgb & 0xFF;
 
-                    $rgb = imagecolorat(/** @scrutinizer ignore-type */$img1, $sx + 1, $sy);
+                    $rgb = (int)imagecolorat(/** @scrutinizer ignore-type */$img1, $sx + 1, $sy);
                     $rX  = ($rgb >> 16) & 0xFF;
                     $gX  = ($rgb >> 8) & 0xFF;
                     $bX  = $rgb & 0xFF;
 
-                    $rgb = imagecolorat(/** @scrutinizer ignore-type */$img1, $sx, $sy + 1);
+                    $rgb = (int)imagecolorat(/** @scrutinizer ignore-type */$img1, $sx, $sy + 1);
                     $rY  = ($rgb >> 16) & 0xFF;
                     $gY  = ($rgb >> 8) & 0xFF;
                     $bY  = $rgb & 0xFF;
 
-                    $rgb = imagecolorat(/** @scrutinizer ignore-type */$img1, $sx + 1, $sy + 1);
+                    $rgb = (int)imagecolorat(/** @scrutinizer ignore-type */$img1, $sx + 1, $sy + 1);
                     $rXY = ($rgb >> 16) & 0xFF;
                     $gXY = ($rgb >> 8) & 0xFF;
                     $bXY = $rgb & 0xFF;
