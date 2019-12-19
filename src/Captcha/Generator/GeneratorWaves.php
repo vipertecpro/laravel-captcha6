@@ -26,19 +26,19 @@ class GeneratorWaves extends AbstractGenerator implements GeneratorInterface
         $img2 = imagecreatetruecolor($params['width'], $params['height']);
 
         //Print text
-        $x = ($params['width'] - strlen($str) * ($params['letterSpacing'] + $params['fontSize'] * 0.66)) / 2;
+        /** @scrutinizer ignore-type */$x = ($params['width'] - strlen($str) * ($params['letterSpacing'] + $params['fontSize'] * 0.66)) / 2;
         for ($i = 0, $iMax = strlen($str); $i < $iMax; $i++) {
             ImageTTFtext(
                 /** @scrutinizer ignore-type */$img1,
                 $params['fontSize'],
                 0,
                 $x,
-                ceil(($params['height'] + $params['fontSize']) / 2),
+                (int)ceil(($params['height'] + $params['fontSize']) / 2),
                 imagecolorallocate(/** @scrutinizer ignore-type */$img1, $textColor['r'], $textColor['g'], $textColor['b']),
                 $params['font'],
                 $str[$i]
             );
-            $x += ceil($params['fontSize'] * 0.66) + $params['letterSpacing'];
+            $x += (int)ceil($params['fontSize'] * 0.66) + $params['letterSpacing'];
         }
 
         //Scratch (text color)
@@ -134,14 +134,14 @@ class GeneratorWaves extends AbstractGenerator implements GeneratorInterface
                         $bY * $frsx1 * $frsy +
                         $bXY * $frsx * $frsy);
                 }
-                imagesetpixel($img2, $x, $y, imagecolorallocate($img2, $newR, $newG, $newB));
+                imagesetpixel(/** @scrutinizer ignore-type */$img2, $x, $y, imagecolorallocate(/** @scrutinizer ignore-type */$img2, $newR, $newG, $newB));
             }
         }
         ob_start();
-        imagepng($img2);
+        imagepng(/** @scrutinizer ignore-type */$img2);
         $content = ob_get_clean();
-        imagedestroy($img1);
-        imagedestroy($img2);
+        imagedestroy(/** @scrutinizer ignore-type */$img1);
+        imagedestroy(/** @scrutinizer ignore-type */$img2);
         return $content;
     }
 }
