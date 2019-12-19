@@ -1,5 +1,9 @@
 <?php
 
+use Vipertecpro\Captcha\Captcha\Code\SimpleCode;
+use Vipertecpro\Captcha\Captcha\Generator\GeneratorWaves;
+use Vipertecpro\Captcha\Captcha\Storage\SessionStorage;
+
 return [
 
     /*
@@ -45,7 +49,7 @@ return [
     | Must implement GeneratorInterface.
     |
     */
-    'generator' => \Vipertecpro\Captcha\Captcha\Generator\GeneratorWaves::class,
+    'generator' => GeneratorWaves::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +58,7 @@ return [
     | Must implement StorageInterface.
     |
     */
-    'storage' => \Vipertecpro\Captcha\Captcha\Storage\SessionStorage::class,
+    'storage' => SessionStorage::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -63,7 +67,7 @@ return [
     | Must implement CodeInterface.
     |
     */
-    'code' => \Vipertecpro\Captcha\Captcha\Code\SimpleCode::class,
+    'code' => SimpleCode::class,
 
     /*
     |--------------------------------------------------------------------------
