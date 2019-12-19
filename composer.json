@@ -1,0 +1,47 @@
+{
+    "name": "vipertecpro/laravel-captcha6",
+    "description": "Captcha integration for the Laravel 6",
+    "keywords": ["captcha", "laravel captcha", "laravel6 captcha"],
+    "license": "MIT",
+    "homepage": "https://github.com/vipertecpro/laravel-captcha6",
+    "authors": [
+        {
+            "name": "Vipul Walia",
+            "email": "vipertecpro@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/vipertecpro/laravel-captcha6/issues",
+        "source": "https://github.com/vipertecpro/laravel-captcha6"
+    },
+    "require": {
+        "php": "^7.2",
+        "illuminate/support": "6.*",
+        "illuminate/http": "6.*",
+        "illuminate/routing": "6.*",
+        "illuminate/view": "6.*",
+        "illuminate/session": "6.*",
+        "illuminate/config": "6.*",
+        "illuminate/translation": "6.*",
+        "ext-gd": "*"
+    }
+    ,
+    "require-dev": {
+        "roave/security-advisories": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vipertecpro\\Captcha\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Vipertecpro\\Captcha\\Providers\\CaptchaServiceProvider"
+            ]
+        }
+    }
+}
