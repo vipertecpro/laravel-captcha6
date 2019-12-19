@@ -1,12 +1,12 @@
 # Captcha integration for the Laravel 5
 Package information:
 
-[![Latest Stable Version](https://poser.pugx.org/bonecms/laravel-captcha/v/stable)](https://packagist.org/packages/bonecms/laravel-captcha)
-[![Total Downloads](https://poser.pugx.org/bonecms/laravel-captcha/downloads)](https://packagist.org/packages/bonecms/laravel-captcha)
-[![License](https://poser.pugx.org/bonecms/laravel-captcha/license)](https://packagist.org/packages/bonecms/laravel-captcha)
-
-For Laravel 5.3 and below - [v1.1](https://github.com/vipertecpro/laravel-captcha/tree/1.1)
-
+[![Latest Stable Version](https://poser.pugx.org/vipertecpro/laravel-captcha6/v/stable)](https://packagist.org/packages/vipertecpro/laravel-captcha6)
+[![Total Downloads](https://poser.pugx.org/vipertecpro/laravel-captcha6/downloads)](https://packagist.org/packages/vipertecpro/laravel-captcha6)
+[![Build Status](https://scrutinizer-ci.com/g/vipertecpro/laravel-captcha6/badges/build.png?b=master)](https://scrutinizer-ci.com/g/vipertecpro/laravel-captcha6/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vipertecpro/laravel-captcha6/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vipertecpro/laravel-captcha6/?branch=master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/vipertecpro/laravel-captcha6/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+[![License](https://poser.pugx.org/vipertecpro/laravel-captcha6/license)](https://packagist.org/packages/vipertecpro/laravel-captcha6)
 ## Installing Laravel Captcha Composer Package
 Note: If you do not have Composer yet, you can install it by following the instructions on https://getcomposer.org
 #### Step 1. Install package
@@ -21,20 +21,6 @@ composer require bonecms/laravel-captcha
     Vipertecpro\Captcha\Providers\CaptchaServiceProvider::class,
 ],
 ```
-
-## Examples
-![example1](examples/image1.png)
-![example2](examples/image2.png)
-![example3](examples/image3.png)
-![example4](examples/image4.png)
-![example5](examples/image5.png)
-![example6](examples/image6.png)
-![example7](examples/image7.png)
-![example8](examples/image8.png)
-![example9](examples/image9.png)
-![example10](examples/image10.png)
-![example11](examples/image11.png)
-![example12](examples/image12.png)
 
 ## Using Laravel Captcha
 Generate a Captcha markup in your Controller:

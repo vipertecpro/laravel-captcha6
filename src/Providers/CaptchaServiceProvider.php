@@ -15,7 +15,7 @@ class CaptchaServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/bone/captcha.php', 'bone.captcha');
         $this->loadViewsFrom(__DIR__ . '/../resources/views/vendor/bone', 'bone');
@@ -37,7 +37,7 @@ class CaptchaServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(Captcha::class, function (Application $app) {
+        $this->app->singleton(Captcha::class, static function (Application $app) {
             $config = $app['config']['bone']['captcha'];
 
             $storage   = $app->make($config['storage']);
@@ -53,13 +53,13 @@ class CaptchaServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function registerBladeDirectives()
+    protected function registerBladeDirectives(): void
     {
         if (! class_exists('\Blade')) {
             return;
         }
 
-        Blade::directive(config('bone.captcha.blade'), function () {
+        Blade::directive(config('bone.captcha.blade'), static function () {
             return "<?php echo Vipertecpro\\Captcha\\Facades\\Captcha::getView() ?>";
         });
     }
@@ -67,13 +67,13 @@ class CaptchaServiceProvider extends ServiceProvider
     /**
      * Register captcha routes.
      */
-    protected function registerRoutes()
+    protected function registerRoutes(): void
     {
         $this->app['router']->group([
             'middleware' => config('bone.captcha.middleware', 'web'),
             'namespace'  => 'Vipertecpro\Captcha\Controllers',
             'as'         => 'bone.captcha.'
-        ], function ($router) {
+        ], static function ($router) {
             $router->get(config('bone.captcha.routes.image'), 'CaptchaController@image')->name('image');
             $router->get(config('bone.captcha.routes.image_tag'), 'CaptchaController@imageTag')->name('image.tag');
         });
@@ -82,7 +82,7 @@ class CaptchaServiceProvider extends ServiceProvider
     /**
      * Register captcha validator.
      */
-    protected function registerValidator()
+    protected function registerValidator(): void
     {
         Validator::extend(config('bone.captcha.validator'), function ($attribute, $value, $parameters, $validator) {
             return $this->app[Captcha::class]->validate($value);
