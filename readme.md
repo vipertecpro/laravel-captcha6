@@ -1,9 +1,10 @@
-# Captcha integration for the Laravel 6
+# Captcha integration for the Laravel 6.X
 Package information:
 
 [![Latest Stable Version](https://poser.pugx.org/vipertecpro/laravel-captcha6/v/stable)](https://packagist.org/packages/vipertecpro/laravel-captcha6)
 [![Total Downloads](https://poser.pugx.org/vipertecpro/laravel-captcha6/downloads)](https://packagist.org/packages/vipertecpro/laravel-captcha6)
 [![Build Status](https://scrutinizer-ci.com/g/vipertecpro/laravel-captcha6/badges/build.png?b=master)](https://scrutinizer-ci.com/g/vipertecpro/laravel-captcha6/build-status/master)
+[![Monthly Downloads](https://poser.pugx.org/vipertecpro/laravel-captcha6/d/monthly)](https://packagist.org/packages/vipertecpro/laravel-captcha6/)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vipertecpro/laravel-captcha6/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vipertecpro/laravel-captcha6/?branch=master)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/vipertecpro/laravel-captcha6/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![License](https://poser.pugx.org/vipertecpro/laravel-captcha6/license)](https://packagist.org/packages/vipertecpro/laravel-captcha6)

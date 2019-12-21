@@ -28,7 +28,7 @@ class Captcha
     /**
      * Captcha parameters.
      *
-     * @var array.
+     * @var array
      */
     private $params;
 

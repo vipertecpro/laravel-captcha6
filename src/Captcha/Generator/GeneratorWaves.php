@@ -20,35 +20,35 @@ class GeneratorWaves extends AbstractGenerator implements GeneratorInterface
 
         //Prototype
         $img1 = imagecreatetruecolor($params['width'], $params['height']);
-        imagefill($img1, 0, 0, imagecolorallocate($img1, $bgColor['r'], $bgColor['g'], $bgColor['b']));
+        imagefill(/** @scrutinizer ignore-type */$img1, 0, 0, imagecolorallocate(/** @scrutinizer ignore-type */$img1, $bgColor['r'], $bgColor['g'], $bgColor['b']));
 
         //Distorted picture (multi-wave)
         $img2 = imagecreatetruecolor($params['width'], $params['height']);
 
         //Print text
-        $x = ($params['width'] - strlen($str) * ($params['letterSpacing'] + $params['fontSize'] * 0.66)) / 2;
+        /** @scrutinizer ignore-type */$x = ($params['width'] - strlen($str) * ($params['letterSpacing'] + $params['fontSize'] * 0.66)) / 2;
         for ($i = 0, $iMax = strlen($str); $i < $iMax; $i++) {
             ImageTTFtext(
-                $img1,
+                /** @scrutinizer ignore-type */$img1,
                 $params['fontSize'],
                 0,
                 $x,
-                ceil(($params['height'] + $params['fontSize']) / 2),
-                imagecolorallocate($img1, $textColor['r'], $textColor['g'], $textColor['b']),
+                (int)ceil(($params['height'] + $params['fontSize']) / 2),
+                imagecolorallocate(/** @scrutinizer ignore-type */$img1, $textColor['r'], $textColor['g'], $textColor['b']),
                 $params['font'],
                 $str[$i]
             );
-            $x += ceil($params['fontSize'] * 0.66) + $params['letterSpacing'];
+            $x += (int)ceil($params['fontSize'] * 0.66) + $params['letterSpacing'];
         }
 
         //Scratch (text color)
         for ($i = 0; $i < $params['scratches'][0]; $i++) {
-            $this->drawScratch($img1, $params['width'], $params['height'], $hexColors);
+            $this->drawScratch(/** @scrutinizer ignore-type */$img1, $params['width'], $params['height'], $hexColors);
         }
 
         //Scratches (background color)
         for ($i = 0; $i < $params['scratches'][1]; $i++) {
-            $this->drawScratch($img1, $params['width'], $params['height'], $hexBgColor);
+            $this->drawScratch(/** @scrutinizer ignore-type */$img1, $params['width'], $params['height'], $hexBgColor);
         }
 
         $sxR1 = random_int(7, 10) / 120;
@@ -74,22 +74,22 @@ class GeneratorWaves extends AbstractGenerator implements GeneratorInterface
                     $g = $gX = $gY = $gXY = $bgColor['g'];
                     $b = $bX = $bY = $bXY = $bgColor['b'];
                 } else {
-                    $rgb = imagecolorat($img1, $sx, $sy);
+                    $rgb = (int)imagecolorat(/** @scrutinizer ignore-type */$img1, $sx, $sy);
                     $r   = ($rgb >> 16) & 0xFF;
                     $g   = ($rgb >> 8) & 0xFF;
                     $b   = $rgb & 0xFF;
 
-                    $rgb = imagecolorat($img1, $sx + 1, $sy);
+                    $rgb = (int)imagecolorat(/** @scrutinizer ignore-type */$img1, $sx + 1, $sy);
                     $rX  = ($rgb >> 16) & 0xFF;
                     $gX  = ($rgb >> 8) & 0xFF;
                     $bX  = $rgb & 0xFF;
 
-                    $rgb = imagecolorat($img1, $sx, $sy + 1);
+                    $rgb = (int)imagecolorat(/** @scrutinizer ignore-type */$img1, $sx, $sy + 1);
                     $rY  = ($rgb >> 16) & 0xFF;
                     $gY  = ($rgb >> 8) & 0xFF;
                     $bY  = $rgb & 0xFF;
 
-                    $rgb = imagecolorat($img1, $sx + 1, $sy + 1);
+                    $rgb = (int)imagecolorat(/** @scrutinizer ignore-type */$img1, $sx + 1, $sy + 1);
                     $rXY = ($rgb >> 16) & 0xFF;
                     $gXY = ($rgb >> 8) & 0xFF;
                     $bXY = $rgb & 0xFF;
@@ -134,14 +134,14 @@ class GeneratorWaves extends AbstractGenerator implements GeneratorInterface
                         $bY * $frsx1 * $frsy +
                         $bXY * $frsx * $frsy);
                 }
-                imagesetpixel($img2, $x, $y, imagecolorallocate($img2, $newR, $newG, $newB));
+                imagesetpixel(/** @scrutinizer ignore-type */$img2, $x, $y, imagecolorallocate(/** @scrutinizer ignore-type */$img2, $newR, $newG, $newB));
             }
         }
         ob_start();
-        imagepng($img2);
+        imagepng(/** @scrutinizer ignore-type */$img2);
         $content = ob_get_clean();
-        imagedestroy($img1);
-        imagedestroy($img2);
+        imagedestroy(/** @scrutinizer ignore-type */$img1);
+        imagedestroy(/** @scrutinizer ignore-type */$img2);
         return $content;
     }
 }
