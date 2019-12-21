@@ -1,4 +1,4 @@
-# Captcha integration for the Laravel 5
+# Captcha integration for the Laravel 6
 Package information:
 
 [![Latest Stable Version](https://poser.pugx.org/vipertecpro/laravel-captcha6/v/stable)](https://packagist.org/packages/vipertecpro/laravel-captcha6)
@@ -11,7 +11,7 @@ Package information:
 Note: If you do not have Composer yet, you can install it by following the instructions on https://getcomposer.org
 #### Step 1. Install package
 ```bash
-composer require bonecms/laravel-captcha
+composer require vipertecpro/laravel-captcha6
 ```
 #### Step 2 for Laravel 5.5 and below. Register the Laravel Captcha service provider
 {LARAVEL_ROOT}/config/app.php:
