@@ -21,7 +21,7 @@ abstract class AbstractGenerator
      */
     protected function hexToRgb($hex)
     {
-        if (! isset($this->colorCache[$hex])) {
+        if (!isset($this->colorCache[$hex])) {
             $this->colorCache[$hex] = [
                 'r' => hexdec(substr($hex, 0, 2)),
                 'g' => hexdec(substr($hex, 2, 2)),
@@ -47,9 +47,9 @@ abstract class AbstractGenerator
 
         imageline(
             $img,
-            random_int(0, (int)floor($imageWidth / 2)),
+            random_int(0, (int) floor($imageWidth / 2)),
             random_int(1, $imageHeight),
-            random_int((int)floor($imageWidth / 2), $imageWidth),
+            random_int((int) floor($imageWidth / 2), $imageWidth),
             random_int(1, $imageHeight),
             imagecolorallocate($img, $rgb['r'], $rgb['g'], $rgb['b'])
         );

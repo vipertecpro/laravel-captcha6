@@ -54,7 +54,7 @@ class Captcha
         $this->params['background'] = is_array($this->params['background']) ? $this->params['background'] : [$this->params['background']];
         $this->params['colors']     = is_array($this->params['colors']) ? $this->params['colors'] : [$this->params['colors']];
 
-        if (! file_exists($this->params['font'])) {
+        if (!file_exists($this->params['font'])) {
             $this->params['font'] = __DIR__ . '/../resources/fonts/IndiraK.ttf';
         }
     }
@@ -87,7 +87,7 @@ class Captcha
     {
         $correctCode = $this->storage->pull();
 
-        if (! empty($correctCode)) {
+        if (!empty($correctCode)) {
             return mb_strtolower($correctCode) === mb_strtolower($code);
         }
 

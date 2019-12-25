@@ -37,7 +37,7 @@ class CaptchaServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(Captcha::class, static function (Application $app) {
+        $this->app->singleton(Captcha::class, static function(Application $app) {
             $config = $app['config']['bone']['captcha'];
 
             $storage   = $app->make($config['storage']);
@@ -55,11 +55,11 @@ class CaptchaServiceProvider extends ServiceProvider
      */
     protected function registerBladeDirectives(): void
     {
-        if (! class_exists('\Blade')) {
+        if (!class_exists('\Blade')) {
             return;
         }
 
-        Blade::directive(config('bone.captcha.blade'), static function () {
+        Blade::directive(config('bone.captcha.blade'), static function() {
             return "<?php echo Vipertecpro\\Captcha\\Facades\\Captcha::getView() ?>";
         });
     }
@@ -73,7 +73,7 @@ class CaptchaServiceProvider extends ServiceProvider
             'middleware' => config('bone.captcha.middleware', 'web'),
             'namespace'  => 'Vipertecpro\Captcha\Controllers',
             'as'         => 'bone.captcha.'
-        ], static function ($router) {
+        ], static function($router) {
             $router->get(config('bone.captcha.routes.image'), 'CaptchaController@image')->name('image');
             $router->get(config('bone.captcha.routes.image_tag'), 'CaptchaController@imageTag')->name('image.tag');
         });
@@ -84,7 +84,7 @@ class CaptchaServiceProvider extends ServiceProvider
      */
     protected function registerValidator(): void
     {
-        Validator::extend(config('bone.captcha.validator'), function ($attribute, $value) {
+        Validator::extend(config('bone.captcha.validator'), function($attribute, $value) {
             return $this->app[Captcha::class]->validate($value);
         },  /** @scrutinizer ignore-type */  trans('bone::captcha.incorrect_code'));
     }

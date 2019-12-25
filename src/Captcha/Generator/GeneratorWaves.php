@@ -33,12 +33,12 @@ class GeneratorWaves extends AbstractGenerator implements GeneratorInterface
                 $params['fontSize'],
                 0,
                 $x,
-                (int)ceil(($params['height'] + $params['fontSize']) / 2),
+                (int) ceil(($params['height'] + $params['fontSize']) / 2),
                 imagecolorallocate(/** @scrutinizer ignore-type */$img1, $textColor['r'], $textColor['g'], $textColor['b']),
                 $params['font'],
                 $str[$i]
             );
-            $x += (int)ceil($params['fontSize'] * 0.66) + $params['letterSpacing'];
+            $x += (int) ceil($params['fontSize'] * 0.66) + $params['letterSpacing'];
         }
 
         //Scratch (text color)
@@ -74,22 +74,22 @@ class GeneratorWaves extends AbstractGenerator implements GeneratorInterface
                     $g = $gX = $gY = $gXY = $bgColor['g'];
                     $b = $bX = $bY = $bXY = $bgColor['b'];
                 } else {
-                    $rgb = (int)imagecolorat(/** @scrutinizer ignore-type */$img1, $sx, $sy);
+                    $rgb = (int) imagecolorat(/** @scrutinizer ignore-type */$img1, $sx, $sy);
                     $r   = ($rgb >> 16) & 0xFF;
                     $g   = ($rgb >> 8) & 0xFF;
                     $b   = $rgb & 0xFF;
 
-                    $rgb = (int)imagecolorat(/** @scrutinizer ignore-type */$img1, $sx + 1, $sy);
+                    $rgb = (int) imagecolorat(/** @scrutinizer ignore-type */$img1, $sx + 1, $sy);
                     $rX  = ($rgb >> 16) & 0xFF;
                     $gX  = ($rgb >> 8) & 0xFF;
                     $bX  = $rgb & 0xFF;
 
-                    $rgb = (int)imagecolorat(/** @scrutinizer ignore-type */$img1, $sx, $sy + 1);
+                    $rgb = (int) imagecolorat(/** @scrutinizer ignore-type */$img1, $sx, $sy + 1);
                     $rY  = ($rgb >> 16) & 0xFF;
                     $gY  = ($rgb >> 8) & 0xFF;
                     $bY  = $rgb & 0xFF;
 
-                    $rgb = (int)imagecolorat(/** @scrutinizer ignore-type */$img1, $sx + 1, $sy + 1);
+                    $rgb = (int) imagecolorat(/** @scrutinizer ignore-type */$img1, $sx + 1, $sy + 1);
                     $rXY = ($rgb >> 16) & 0xFF;
                     $gXY = ($rgb >> 8) & 0xFF;
                     $bXY = $rgb & 0xFF;
