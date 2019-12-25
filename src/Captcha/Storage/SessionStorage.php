@@ -40,7 +40,7 @@ class SessionStorage implements StorageInterface
     public function pull()
     {
         $code = $this->session->get($this->key);
-        if (! empty($code)) {
+        if (!empty($code)) {
             $this->session->forget($this->key);
         }
 
