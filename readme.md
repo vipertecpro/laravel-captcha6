@@ -8,6 +8,7 @@ Package information:
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vipertecpro/laravel-captcha6/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vipertecpro/laravel-captcha6/?branch=master)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/vipertecpro/laravel-captcha6/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![License](https://poser.pugx.org/vipertecpro/laravel-captcha6/license)](https://packagist.org/packages/vipertecpro/laravel-captcha6)
+
 ## Installing Laravel Captcha Composer Package
 Note: If you do not have Composer yet, you can install it by following the instructions on https://getcomposer.org
 #### Step 1. Install package
